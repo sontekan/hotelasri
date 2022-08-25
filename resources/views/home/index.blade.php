@@ -9,13 +9,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{asset ('frontend')}}/img/favicon-final.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="frontend/img/favicon-final.ico">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="{{asset ('frontend')}}/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{asset ('frontend')}}/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="{{asset ('frontend')}}/css/magnific-popup.css">
+    <link rel="stylesheet" href="frontend/css/bootstrap.min.css">
+    <link rel="stylesheet" href="frontend/css/owl.carousel.min">
+    <link rel="stylesheet" href="frontend/css/magnific-popup.css">
     <link rel="stylesheet" href="{{asset ('frontend')}}/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{asset ('frontend')}}/css/themify-icons.css">
     <link rel="stylesheet" href="{{asset ('frontend')}}/css/nice-select.css">
