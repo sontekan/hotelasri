@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Models\Kamar;
 use App\Models\Pemesanan;
 
+
 class DashboardController extends Controller
 {
     /**
@@ -24,7 +25,8 @@ class DashboardController extends Controller
         $user = User::where('role', '=', 'member')->count();
         $kamar = Kamar::all()->count();
         $pemesanan = Pemesanan::all()->count();
-        return view('pages.dashboard.index',['data'=>$payment, 'user'=>$user, 'kamar'=>$kamar, 'pemesanan'=>$pemesanan]);
+        $paymentcount = Payment::where('transaction_status', '=', 'settlement')->count();
+        return view('pages.dashboard.index',['data'=>$payment, 'user'=>$user, 'kamar'=>$kamar, 'pemesanan'=>$pemesanan, 'paymentcount'=>$paymentcount]);
     }
 
     /**

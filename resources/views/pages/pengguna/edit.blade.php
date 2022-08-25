@@ -44,7 +44,7 @@
                                             data-placeholder="Pilih Fasilitas">
                                             <option value="admin" {{( $user->role == 'admin') ? 'selected' : '' }}>Administrator</option>                                           
                                             <option value="resepsionis" {{( $user->role == 'resepsionis') ? 'selected' : '' }}>Resepsionis</option> 
-                                            
+                                            <option value="member" {{( $user->role == 'member') ? 'selected' : '' }}>Member</option> 
                                         </select>
                                     </div>
                                 </div>

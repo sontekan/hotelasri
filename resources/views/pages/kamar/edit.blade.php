@@ -10,11 +10,11 @@
 
            <!-- PAGE-HEADER -->
            <div class="page-header">
-               <h1 class="page-title">Empty</h1>
+               <h1 class="page-title">Kamar</h1>
                <div>
                    <ol class="breadcrumb">
-                       <li class="breadcrumb-item"><a href="javascript:void(0)">Pages</a></li>
-                       <li class="breadcrumb-item active" aria-current="page">Empty</li>
+                       <li class="breadcrumb-item"><a href="javascript:void(0)">Kamar</a></li>
+                       <li class="breadcrumb-item active" aria-current="page">Edit Kamar</li>
                    </ol>
                </div>
            </div>
@@ -24,35 +24,36 @@
            <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Edit Tipe Kamar</h4>
+                    <h4 class="card-title">Edit Kamar</h4>
                 </div>
                 <div class="card-body">
-                    <form enctype="multipart/form-data" method="post" action="{{url('tipekamar/'. $data->id)}}" class="form-horizontal">
-                        @csrf
+                    <form enctype="multipart/form-data" method="post" action="{{url('kamar/'.Crypt::encryptString($kamar->id))}}" class="form-horizontal">
                         @method('put')
+                        @csrf
                         <div class=" row mb-4">
-                            <label class="col-md-3 form-label">Nama</label>
+                            <label class="col-md-3 form-label">No Kamar</label>
                             <div class="col-md-9">
-                                <input value="{{$data->nama}}" name="nama" type="text" class="form-control">
+                                <input value="{{$kamar->no_kamar}}" name="no_kamar" type="text" class="form-control">
                             </div>
                         </div>
                         <div class=" row mb-4">
-                            <label class="col-md-3 form-label">Harga</label>
+                            <label class="col-md-3 form-label">Tipe Kamar</label>
                             <div class="col-md-9">
-                                <input name="harga" type="number" class="form-control" value="{{$data->harga}}" >
+                                <select name="tp_id" class="form-control select2-show-search form-select" data-placeholder="Pilih Tipe Kamar">
+                                    <option label="Pilih Tipe Kamar"></option>
+                                    @foreach ($tipekamar as $tp)
+                                    <option value="{{$tp->id}}">{{$tp->nama}}</option> 
+                                    @endforeach
+                                    
+                                </select>
                             </div>
                         </div>
-                        <div class=" row mb-4">
-                            <label  class="col-md-3 form-label">Deskripsi</label>
-                            <div class="col-md-9">
-                                <textarea name="keterangan" class="form-control" value="{{$data->keterangan}}"  style="height: 100px"></textarea>
-                            </div>
-                        </div>  
+        
                 
                         <div class="mb-0 mt-4 row justify-content-end">
                             <div class="col-md-9">
                                 <button type="submit" class="btn btn-primary">Tambahkan</button>
-                                <a href="{{url('tipekamar')}}" class="btn btn-danger">Batal</a>
+                                <a href="{{url('kamar')}}" class="btn btn-danger">Batal</a>
                             </div>
                         </div>
                     </form>
@@ -65,11 +66,5 @@
 </div>
 <!--app-content closed-->
 </div> 
-
-@section('script')
-      <!-- SELECT2 JS -->
-      <script src="{{asset ('assets')}}/plugins/select2/select2.full.min.js"></script>
-      <script src="{{asset ('assets')}}/js/select2.js"></script>
-@endsection
 
 @endsection

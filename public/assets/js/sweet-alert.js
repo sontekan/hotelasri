@@ -98,7 +98,7 @@ $(function(e) {
         });
     });
     $(document).on("click", "#click", function(e) {
-        swal('Congratulations!', 'Your message has been succesfully sent', 'success');
+        swal('Terima Kasih!', 'Pesan Kamu Telah Kami Terima', 'success');
     });
     //payment alert
     $(document).on("click", "#click-payment", function(e) {

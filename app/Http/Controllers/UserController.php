@@ -104,6 +104,8 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $decryptedid = Crypt::decryptString($id);
+        User::where('id',$decryptedid )->delete();
+        return redirect('user')->with('success', 'Data Pengguna Berhasil Dihapus');
     }
 }

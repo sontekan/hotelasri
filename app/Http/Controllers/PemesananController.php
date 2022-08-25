@@ -60,7 +60,7 @@ class PemesananController extends Controller
         $data->extra_service=$request->fasilitas;
         $data->save();
 
-        return redirect('pemesanan')->with('success','Pemesanan Berhasil Dilakukan');
+        return redirect('pemesanan')->with('success','Pemesanan Offline Berhasil Dilakukan');
     }
 
     public function store_online(Request $request)
@@ -82,7 +82,7 @@ class PemesananController extends Controller
             'kamar_id' => $data->kamar_id
         ]);
 
-        return redirect('pemesanan/create')->with('success','Pemesanan Berhasil Dilakukan');
+        return redirect('pemesanan')->with('success','Pemesanan Online Berhasil Dilakukan');
     }
 
 

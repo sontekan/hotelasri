@@ -53,15 +53,10 @@
                                 <td>{{$row->name}}</td>
                                 <td>{{$row->email}}</td>
                                 <td>{{$row->role}}</td>
-                                @if ($row->role == 'admin' || $row->role == 'resepsionis')
                                 <td>
                                     <a class="btn btn-primary" href="{{url ('user/'. Crypt::encryptString($row->id)). '/edit'}}"> <span class="fe fe-edit"> Edit</span></a>
-                                    <a class="btn btn-danger" href="{{url ('user/'. $row->id). '/delete'}}"> <span class="fe fe-trash"> Hapus</span></a>
+                                    <a class="btn btn-danger" href="{{url ('user/'. Crypt::encryptString($row->id).'/delete')}}"> <span class="fe fe-trash"> Hapus</span></a>
                                 </td>
-                                @else
-                                <td> Tidak Boleh Di Ubah!</td>
-                                @endif
-                               
                             </tr>
                             @endforeach
                         </tbody>

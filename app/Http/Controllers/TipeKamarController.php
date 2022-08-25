@@ -54,7 +54,7 @@ class TipeKamarController extends Controller
         $data->banner=$ft;
         $data->save();
 
-        return redirect('tipekamar/create')->with('success','Data Tipe Kamar Berhasil Ditambahkan');
+        return redirect('tipekamar')->with('success','Data Tipe Kamar Berhasil Ditambahkan');
 
     }
 

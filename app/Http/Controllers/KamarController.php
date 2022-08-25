@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Kamar;
 use App\Models\TipeKamar;
+use Illuminate\Support\Facades\Crypt;
 
 class KamarController extends Controller
 {
@@ -48,7 +49,7 @@ class KamarController extends Controller
         $data->tipekamar_id=$request->tp_id;
         $data->save();
 
-        return redirect('kamar');
+        return redirect('kamar')->with('success', 'Data Kamar Berhasil Ditambahkan');
     }
 
     /**
@@ -70,8 +71,10 @@ class KamarController extends Controller
      */
     public function edit($id)
     {
+        $decryptedid = Crypt::decryptString($id);
+        $kamar=Kamar::find($decryptedid);
         $tipekamar=TipeKamar::all();
-        return view ('pages.kamar.create', ['tipekamar'=>$tipekamar]);
+        return view ('pages.kamar.edit', ['tipekamar'=>$tipekamar, 'kamar'=>$kamar]);
     }
 
     /**
@@ -83,12 +86,13 @@ class KamarController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data=Kamar::find($id);
+        $decryptedid = Crypt::decryptString($id);
+        $data=Kamar::find($decryptedid);
         $data->no_kamar=$request->no_kamar;
         $data->tipekamar_id=$request->tp_id;
         $data->save();
 
-        return redirect('kamar');
+        return redirect('kamar')->with('success', 'Data Kamar Berhasil Diperbaharui');
     }
 
     /**
@@ -99,7 +103,8 @@ class KamarController extends Controller
      */
     public function destroy($id)
     {
-        Kamar::where('id',$id)->delete();
-        return redirect('kamar');
+        $decryptedid = Crypt::decryptString($id);
+        Kamar::where('id', $decryptedid)->delete();
+        return redirect('kamar')->with('success', 'Data Kamar Berhasil Dihapus');
     }
 }

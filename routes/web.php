@@ -31,7 +31,6 @@ use App\Http\Controllers\KontakController;
 // Route::post('login', [LoginController::class, 'authenticate']);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::post('kontak', [KontakController::class, 'store']);
 // Route::post('logoutuser', [LoginController::class, 'logout_user']);
 
 // //RegistrasiController 
@@ -66,6 +65,7 @@ Route::group(['middleware' => ['auth','verified','checkrole:admin']], function()
     Route::get('user',[UserController::class, 'index'] );
     Route::get('user/{id}/edit',[UserController::class, 'edit'] );
     Route::put('user/{id}',[UserController::class, 'update'] );
+    Route::get('user/{id}/delete',[UserController::class, 'destroy'] );
   });
 
   Route::group(['middleware' => ['auth','verified','checkrole:member,admin']], function() {

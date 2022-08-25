@@ -38,7 +38,7 @@
                         <div class=" row mb-4">
                             <label class="col-md-3 form-label">Tipe Kamar</label>
                             <div class="col-md-9">
-                                <select name="tp_id" class="form-control select2-show-search form-select" data-placeholder="Choose one">
+                                <select name="tp_id" class="form-control select2-show-search form-select" data-placeholder="pilih Tipe Kamar">
                                     <option label="Pilih Tipe Kamar"></option>
                                     @foreach ($tipekamar as $tp)
                                      <option value="{{$tp->id}}">{{$tp->nama}}</option>

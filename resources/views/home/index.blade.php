@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{asset ('frontend')}}/css/slicknav.css">
     <link rel="stylesheet" href="{{asset ('frontend')}}/css/style.css">
     <link rel="stylesheet" href="{{asset ('frontend')}}/css/responsive.css">
+
 </head>
 
 <body>
@@ -35,12 +36,6 @@
     <!-- header-start -->
     <header>
         <div class="header-area ">
-            @if(Session::has('success'))
-                    <div class="alert alert-success" role="alert">
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true">×</button>
-                        <i class="fa fa-check-circle-o me-2" aria-hidden="true"></i>{{session('success')}}
-                    </div>
-                    @endif
             <div id="sticky-header" class="main-header-area">
                 <div class="container-fluid p-0">
                     <div class="row align-items-center no-gutters">
@@ -285,67 +280,7 @@
 
     <!-- Contact Area -->
     <section class="contact-section">
-        <div class="container">
-    <div class="row">
-        <div class="col-12"  id="contact_area">
-            <h2 class="contact-title">Hubungi Kami</h2>
-        </div>
-        <div class="col-lg-8">
-            <form enctype="multipart/form-data" class="form-contact contact_form" action="{{url('kontak')}}" method="post" id="contactForm" novalidate="novalidate">
-                @csrf
-                <div class="row">
-                    <div class="col-12">
-                        <div class="form-group">
-                            <textarea class="form-control w-100" name="pesan" required id="message" cols="30" rows="9"  placeholder=" Masukan Pesan "></textarea>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <input class="form-control valid" name="nama" required id="name" type="text"  placeholder="Masukin Nama ">
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="form-group">
-                            <input class="form-control valid" name="email" required id="email" type="email"  placeholder="Masukin Email ">
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="form-group">
-                            <input class="form-control" name="subjek" required id="subject" type="text" placeholder="Masukin Subjek">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group mt-3">
-                    <button type="submit" class="button button-contactForm boxed-btn">Kirim</button>
-                </div>
-            </form>
-        </div>
-        <div class="col-lg-3 offset-lg-1">
-            <div class="media contact-info">
-                <span class="contact-info__icon"><i class="ti-home"></i></span>
-                <div class="media-body">
-                    <h3>Hotel Asri</h3>
-                    <p>Jl Hasanudin No 78, Genteng, Banyuwangi</p>
-                </div>
-            </div>
-            <div class="media contact-info">
-                <span class="contact-info__icon"><i class="ti-tablet"></i></span>
-                <div class="media-body">
-                    <h3>+62 (0333) 845905</h3>
-                    <p>Senin - Jumat <br> 08:00 - 16:00 WIB</p>
-    
-                </div>
-            </div>
-            <div class="media contact-info">
-                <span class="contact-info__icon"><i class="ti-email"></i></span>
-                <div class="media-body">
-                    <h3>pelanggan@hotelasri.com</h3>
-                    <p>Kirim Pertanyaan Anda Kapan Saja!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+        
 </section>
 <!-- Contact Area End -->
     
@@ -495,36 +430,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <script src="{{asset ('frontend')}}/js/jquery.form.js"></script>
     <script src="{{asset ('frontend')}}/js/jquery.validate.min.js"></script>
     <script src="{{asset ('frontend')}}/js/mail-script.js"></script>
-
     <script src="{{asset ('frontend')}}/js/main.js"></script>
-    <script>
-        $('#datepicker').datepicker({
-            iconsLibrary: 'fontawesome',
-            icons: {
-             rightIcon: '<span class="fa fa-caret-down"></span>'
-         }
-        });
-        $('#datepicker2').datepicker({
-            iconsLibrary: 'fontawesome',
-            icons: {
-             rightIcon: '<span class="fa fa-caret-down"></span>'
-         }
 
-        });
-    </script>
-    <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/63063ab537898912e964e8af/1gb85alr3';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
 </body>
 
 </html>

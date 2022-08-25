@@ -30,12 +30,19 @@
                 <a href="{{url ('kamar/create')}}"  class="right btn btn-primary">Tambah Kamar</a>
             </div>
             <div class="card-body">
+                @if(Session::has('success'))
+                    <div class="alert alert-success" role="alert">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-hidden="true">×</button>
+                        <i class="fa fa-check-circle-o me-2" aria-hidden="true"></i>{{session('success')}}
+                    </div>
+                    @endif
                 <div class="table-responsive">
                     <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
                         <thead>
                             <tr>
                                 <th class="wd-15p border-bottom-0">No</th>
                                 <th class="wd-15p border-bottom-0">Kamar</th>
+                                <th class="wd-15p border-bottom-0">Foto Kamar</th>
                                 <th class="wd-20p border-bottom-0">Tipe Kamar</th>
                                 <th class="wd-20p border-bottom-0">Harga</th>
                                 <th class="wd-10p border-bottom-0">Aksi</th>
@@ -46,12 +53,14 @@
                             <tr>
                                 <td>{{$loop->iteration}}</td> 
                                 <td>{{$tp->no_kamar}}</td>
+                                <td>
+                                    <img width="100" src="{{asset('storage/'.$tp->tipekamar->banner)}}" alt="image"> 
+                                </td>
                                 <td>{{$tp->tipekamar->nama}}</td>
                                 <td>{{$tp->tipekamar->harga}}</td>
                                 <td>
-                                    <button class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#viewkamar"> <span class="fe fe-eye"> Detail</span></button>
-                                    <a class="btn btn-primary" href="{{url ('kamar/'. $tp->id). '/edit'}}"> <span class="fe fe-edit"> Edit</span></a>
-                                    <a class="btn btn-danger" href="{{url ('kamar/'. $tp->id.'/delete')}}"> <span class="fe fe-trash"> Hapus</span></a>
+                                    <a class="btn btn-primary" href="{{url ('kamar/'. Crypt::encryptString($tp->id)). '/edit'}}"> <span class="fe fe-edit"> Edit</span></a>
+                                    <a class="btn btn-danger" href="{{url ('kamar/'. Crypt::encryptString($tp->id).'/delete')}}"> <span class="fe fe-trash"> Hapus</span></a>
                                 </td>
                                 
                             </tr>
