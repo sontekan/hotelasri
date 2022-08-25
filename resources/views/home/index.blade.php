@@ -203,7 +203,7 @@
                 <div class="col-xl-5 col-lg-5">
                     <div class="about_info">
                         <div class="section_title mb-20px">
-                            <span>Makanan Lezat</span>
+                            <span>Makananan Lezat</span>
                             <h3>Kami Menyajikan Makanan Segar <br>
                                Dan Lezat</h3>
                         </div>
