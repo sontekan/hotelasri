@@ -9,22 +9,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- <link rel="manifest" href="site.webmanifest"> -->
-    <link rel="shortcut icon" type="image/x-icon" href="frontend/img/favicon-final.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="{{asset ('frontend')}}/img/favicon-final.ico">
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
-    <link rel="stylesheet" href="frontend/css/bootstrap.min.css">
-    <link rel="stylesheet" href="frontend/css/owl.carousel.min">
-    <link rel="stylesheet" href="frontend/css/magnific-popup.css">
-    <link rel="stylesheet" href="frontend/css/font-awesome.min.css">
-    <link rel="stylesheet" href="frontend/css/themify-icons.css">
-    <link rel="stylesheet" href="frontend/css/nice-select.css">
-    <link rel="stylesheet" href="frontend/css/flaticon.css">
-    <link rel="stylesheet" href="frontend/css/gijgo.css">
-    <link rel="stylesheet" href="frontend/css/animate.css">
-    <link rel="stylesheet" href="frontend/css/slicknav.css">
-    <link rel="stylesheet" href="frontend/css/style.css">
-    <link rel="stylesheet" href="frontend/css/responsive.css">
+    <link rel="stylesheet" href="{{asset ('frontend')}}/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset ('frontend')}}/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{asset ('frontend')}}/css/magnific-popup.css">
+    <link rel="stylesheet" href="{{asset ('frontend')}}/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset ('frontend')}}/css/themify-icons.css">
+    <link rel="stylesheet" href="{{asset ('frontend')}}/css/nice-select.css">
+    <link rel="stylesheet" href="{{asset ('frontend')}}/css/flaticon.css">
+    <link rel="stylesheet" href="{{asset ('frontend')}}/css/gijgo.css">
+    <link rel="stylesheet" href="{{asset ('frontend')}}/css/animate.css">
+    <link rel="stylesheet" href="{{asset ('frontend')}}/css/slicknav.css">
+    <link rel="stylesheet" href="{{asset ('frontend')}}/css/style.css">
+    <link rel="stylesheet" href="{{asset ('frontend')}}/css/responsive.css">
 </head>
 
 <body>
@@ -59,7 +59,7 @@
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
                                 <a href="index.html">
-                                    <img src="frontend/img/logo-final.png" alt="">
+                                    <img src="{{asset ('frontend')}}/img/logo-final.png" alt="">
                                 </a>
                             </div>
                         </div>
@@ -174,10 +174,10 @@
                 <div class="col-xl-7 col-lg-7">
                     <div class="about_thumb d-flex">
                         <div class="img_1">
-                            <img src="frontend/img/about/about_1.png" alt="">
+                            <img src="{{asset('frontend')}}/img/about/about_1.png" alt="">
                         </div>
                         <div class="img_2">
-                            <img src="frontend/img/about/about_2.png" alt="">
+                            <img src="{{asset('frontend')}}/img/about/about_2.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -193,17 +193,17 @@
                 <div class="col-xl-7 col-lg-7">
                     <div class="about_thumb2 d-flex">
                         <div class="img_1">
-                            <img src="frontend/img/about/1.png" alt="">
+                            <img src="{{asset('frontend')}}/img/about/1.png" alt="">
                         </div>
                         <div class="img_2">
-                            <img src="frontend/img/about/2.png" alt="">
+                            <img src="{{asset('frontend')}}/img/about/2.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-5 col-lg-5">
                     <div class="about_info">
                         <div class="section_title mb-20px">
-                            <span>Makananan Lezat</span>
+                            <span>Makanan Lezat</span>
                             <h3>Kami Menyajikan Makanan Segar <br>
                                Dan Lezat</h3>
                         </div>
@@ -233,7 +233,7 @@
         <div class="rooms_here">
             <div class="single_rooms">
                 <div class="room_thumb">
-                    <img src="frontend/img/rooms/1.png" alt="">
+                    <img src="{{asset('frontend')}}/img/rooms/1.png" alt="">
                     <div class="room_heading d-flex justify-content-between align-items-center">
                         <div class="room_heading_inner">
                             <span>Mulai Rp.350K/malam</span>
@@ -245,7 +245,7 @@
             </div>
             <div class="single_rooms">
                 <div class="room_thumb">
-                    <img src="frontend/img/rooms/2.png" alt="">
+                    <img src="{{asset('frontend')}}/img/rooms/2.png" alt="">
                     <div class="room_heading d-flex justify-content-between align-items-center">
                         <div class="room_heading_inner">
                             <span>Mulai RP.250K/malam</span>
@@ -257,7 +257,7 @@
             </div>
             <div class="single_rooms">
                 <div class="room_thumb">
-                    <img src="frontend/img/rooms/3.png" alt="">
+                    <img src="{{asset('frontend')}}/img/rooms/3.png" alt="">
                     <div class="room_heading d-flex justify-content-between align-items-center">
                         <div class="room_heading_inner">
                             <span>Mulai Rp.500K/malam</span>
@@ -269,7 +269,7 @@
             </div>
             <div class="single_rooms">
                 <div class="room_thumb">
-                    <img src="frontend/img/rooms/4.png" alt="">
+                    <img src="{{asset('frontend')}}/img/rooms/4.png" alt="">
                     <div class="room_heading d-flex justify-content-between align-items-center">
                         <div class="room_heading_inner">
                             <span>Mulai Rp.220K/malam</span>
@@ -352,7 +352,7 @@
     <!-- instragram_area_start -->
     <div class="instragram_area">
         <div class="single_instagram">
-            <img src="frontend/img/instragram/1.png" alt="">
+            <img src="{{asset('frontend')}}/img/instragram/1.png" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -360,7 +360,7 @@
             </div>
         </div>
         <div class="single_instagram">
-            <img src="frontend/img/instragram/2.png" alt="">
+            <img src="{{asset('frontend')}}/img/instragram/2.png" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -368,7 +368,7 @@
             </div>
         </div>
         <div class="single_instagram">
-            <img src="frontend/img/instragram/3.png" alt="">
+            <img src="{{asset('frontend')}}/img/instragram/3.png" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -376,7 +376,7 @@
             </div>
         </div>
         <div class="single_instagram">
-            <img src="frontend/img/instragram/4.png" alt="">
+            <img src="{{asset('frontend')}}/img/instragram/4.png" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -384,7 +384,7 @@
             </div>
         </div>
         <div class="single_instagram">
-            <img src="frontend/img/instragram/5.png" alt="">
+            <img src="{{asset('frontend')}}/img/instragram/5.png" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -470,33 +470,33 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     </footer>
 
     <!-- JS here -->
-    <script src="frontend/js/vendor/modernizr-3.5.0.min.js"></script>
-    <script src="frontend/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="frontend/js/popper.min.js"></script>
-    <script src="frontend/js/bootstrap.min.js"></script>
-    <script src="frontend/js/owl.carousel.min.js"></script>
-    <script src="frontend/js/isotope.pkgd.min.js"></script>
-    <script src="frontend/js/ajax-form.js"></script>
-    <script src="frontend/js/waypoints.min.js"></script>
-    <script src="frontend/js/jquery.counterup.min.js"></script>
-    <script src="frontend/js/imagesloaded.pkgd.min.js"></script>
-    <script src="frontend/js/scrollIt.js"></script>
-    <script src="frontend/js/jquery.scrollUp.min.js"></script>
-    <script src="frontend/js/wow.min.js"></script>
-    <script src="frontend/js/nice-select.min.js"></script>
-    <script src="frontend/js/jquery.slicknav.min.js"></script>
-    <script src="frontend/js/jquery.magnific-popup.min.js"></script>
-    <script src="frontend/js/plugins.js"></script>
-    <script src="frontend/js/gijgo.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/popper.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/bootstrap.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/owl.carousel.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/isotope.pkgd.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/ajax-form.js"></script>
+    <script src="{{asset ('frontend')}}/js/waypoints.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/jquery.counterup.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/imagesloaded.pkgd.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/scrollIt.js"></script>
+    <script src="{{asset ('frontend')}}/js/jquery.scrollUp.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/wow.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/nice-select.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/jquery.slicknav.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/jquery.magnific-popup.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/plugins.js"></script>
+    <script src="{{asset ('frontend')}}/js/gijgo.min.js"></script>
 
     <!--contact js-->
-    <script src="frontend/js/contact.js"></script>
-    <script src="frontend/js/jquery.ajaxchimp.min.js"></script>
-    <script src="frontend/js/jquery.form.js"></script>
-    <script src="frontend/js/jquery.validate.min.js"></script>
-    <script src="frontend/js/mail-script.js"></script>
+    <script src="{{asset ('frontend')}}/js/contact.js"></script>
+    <script src="{{asset ('frontend')}}/js/jquery.ajaxchimp.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/jquery.form.js"></script>
+    <script src="{{asset ('frontend')}}/js/jquery.validate.min.js"></script>
+    <script src="{{asset ('frontend')}}/js/mail-script.js"></script>
 
-    <script src="frontend/js/main.js"></script>
+    <script src="{{asset ('frontend')}}/js/main.js"></script>
     <script>
         $('#datepicker').datepicker({
             iconsLibrary: 'fontawesome',
