@@ -236,7 +236,7 @@
                     <img src="frontend/img/rooms/1.png" alt="">
                     <div class="room_heading d-flex justify-content-between align-items-center">
                         <div class="room_heading_inner">
-                            <span>Mulai Rp.350K/malam</span>
+                            <span>Mulai Rp.450K/malam</span>
                             <h3>VIP Room</h3>
                         </div>
                         <a href="{{url('booking/cek-kamar')}}" class="line-button">book now</a>
