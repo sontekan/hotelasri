@@ -174,10 +174,10 @@
                 <div class="col-xl-7 col-lg-7">
                     <div class="about_thumb d-flex">
                         <div class="img_1">
-                            <img src="{{asset('frontend')}}/img/about/about_1.png" alt="">
+                            <img src="frontend/img/about/about_1.png" alt="">
                         </div>
                         <div class="img_2">
-                            <img src="{{asset('frontend')}}/img/about/about_2.png" alt="">
+                            <img src="frontend/img/about/about_2.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -193,10 +193,10 @@
                 <div class="col-xl-7 col-lg-7">
                     <div class="about_thumb2 d-flex">
                         <div class="img_1">
-                            <img src="{{asset('frontend')}}/img/about/1.png" alt="">
+                            <img src="frontend/img/about/1.png" alt="">
                         </div>
                         <div class="img_2">
-                            <img src="{{asset('frontend')}}/img/about/2.png" alt="">
+                            <img src="frontend/img/about/2.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -233,7 +233,7 @@
         <div class="rooms_here">
             <div class="single_rooms">
                 <div class="room_thumb">
-                    <img src="{{asset('frontend')}}/img/rooms/1.png" alt="">
+                    <img src="frontend/img/rooms/1.png" alt="">
                     <div class="room_heading d-flex justify-content-between align-items-center">
                         <div class="room_heading_inner">
                             <span>Mulai Rp.350K/malam</span>
@@ -245,7 +245,7 @@
             </div>
             <div class="single_rooms">
                 <div class="room_thumb">
-                    <img src="{{asset('frontend')}}/img/rooms/2.png" alt="">
+                    <img src="frontend/img/rooms/2.png" alt="">
                     <div class="room_heading d-flex justify-content-between align-items-center">
                         <div class="room_heading_inner">
                             <span>Mulai RP.250K/malam</span>
@@ -257,7 +257,7 @@
             </div>
             <div class="single_rooms">
                 <div class="room_thumb">
-                    <img src="{{asset('frontend')}}/img/rooms/3.png" alt="">
+                    <img src="frontend/img/rooms/3.png" alt="">
                     <div class="room_heading d-flex justify-content-between align-items-center">
                         <div class="room_heading_inner">
                             <span>Mulai Rp.500K/malam</span>
@@ -269,7 +269,7 @@
             </div>
             <div class="single_rooms">
                 <div class="room_thumb">
-                    <img src="{{asset('frontend')}}/img/rooms/4.png" alt="">
+                    <img src="frontend/img/rooms/4.png" alt="">
                     <div class="room_heading d-flex justify-content-between align-items-center">
                         <div class="room_heading_inner">
                             <span>Mulai Rp.220K/malam</span>
@@ -291,7 +291,7 @@
             <h2 class="contact-title">Hubungi Kami</h2>
         </div>
         <div class="col-lg-8">
-            <form enctype="multipart/form-data" class="form-contact contact_form" action="{{url('kontak')}}" method="post" id="contactForm">
+            <form enctype="multipart/form-data" class="form-contact contact_form" action="{{url('kontak')}}" method="post" id="contactForm" novalidate="novalidate">
                 @csrf
                 <div class="row">
                     <div class="col-12">
@@ -352,7 +352,7 @@
     <!-- instragram_area_start -->
     <div class="instragram_area">
         <div class="single_instagram">
-            <img src="{{asset('frontend')}}/img/instragram/1.png" alt="">
+            <img src="frontend/img/instragram/1.png" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -360,7 +360,7 @@
             </div>
         </div>
         <div class="single_instagram">
-            <img src="{{asset('frontend')}}/img/instragram/2.png" alt="">
+            <img src="frontend/img/instragram/2.png" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -368,7 +368,7 @@
             </div>
         </div>
         <div class="single_instagram">
-            <img src="{{asset('frontend')}}/img/instragram/3.png" alt="">
+            <img src="frontend/img/instragram/3.png" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -376,7 +376,7 @@
             </div>
         </div>
         <div class="single_instagram">
-            <img src="{{asset('frontend')}}/img/instragram/4.png" alt="">
+            <img src="frontend/img/instragram/4.png" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
@@ -384,7 +384,7 @@
             </div>
         </div>
         <div class="single_instagram">
-            <img src="{{asset('frontend')}}/img/instragram/5.png" alt="">
+            <img src="frontend/img/instragram/5.png" alt="">
             <div class="ovrelay">
                 <a href="#">
                     <i class="fa fa-instagram"></i>
