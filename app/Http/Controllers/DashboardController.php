@@ -8,6 +8,7 @@ use App\Models\Payment;
 use App\Models\User;
 use App\Models\Kamar;
 use App\Models\Pemesanan;
+use App\Models\TipeKamar;
 
 
 class DashboardController extends Controller
@@ -21,12 +22,16 @@ class DashboardController extends Controller
     
     public function index()
     {
-        $payment=Payment::all();
-        $user = User::where('role', '=', 'member')->count();
-        $kamar = Kamar::all()->count();
-        $pemesanan = Pemesanan::all()->count();
-        $paymentcount = Payment::where('transaction_status', '=', 'settlement')->count();
-        return view('pages.dashboard.index',['data'=>$payment, 'user'=>$user, 'kamar'=>$kamar, 'pemesanan'=>$pemesanan, 'paymentcount'=>$paymentcount]);
+        // $payment=Payment::all();
+        // $user = User::where('role', '=', 'member')->count();
+        // $kamar = Kamar::all()->count();
+        // $pemesanan = Pemesanan::all()->count();
+        // $paymentcount = Payment::where('transaction_status', '=', 'settlement')->count();
+        // return view('pages.dashboard.index',['data'=>$payment, 'user'=>$user, 'kamar'=>$kamar, 'pemesanan'=>$pemesanan, 'paymentcount'=>$paymentcount]);
+
+        $pemesanan=Pemesanan::all();
+        $tipekamar=TipeKamar::all();
+        return view('pages.dashboard.export',['pemesanan'=>$pemesanan, 'tipekamar'=>$tipekamar]);
     }
 
     /**
