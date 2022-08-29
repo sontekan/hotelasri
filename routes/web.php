@@ -41,6 +41,7 @@ Auth::routes(['verify' => true]);
 Route::group(['middleware' => ['auth','verified','checkrole:admin,resepsionis']], function() {
     //DashboardController
     Route::resource('dashboard', DashboardController::class);
+    Route::get('transaksi/export/',[DashboardController::class, 'export'] );
     // Route::get('dashboard/{order_id}/payment-success', [DashboardController::class, 'index']);
     // Route::post('logoutadmin', [LoginController::class, 'logout_admin']);
      //PemesananController

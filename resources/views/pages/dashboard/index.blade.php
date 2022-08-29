@@ -103,7 +103,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h3 class="card-title ">Pesanan &nbsp</h3>
-                        {{-- <a href="{{url ('tipekamar/create')}}"  class="right btn btn-primary">Tambah Tipe Kamar</a> --}}
+                        <a href="{{url ('transaksi/export')}}"  class="right btn btn-primary">Laporan Transaksi</a>
                     </div>
                     <div class="card-body">
                         @if (Session::has('success'))

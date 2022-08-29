@@ -9,6 +9,8 @@ use App\Models\User;
 use App\Models\Kamar;
 use App\Models\Pemesanan;
 use App\Models\TipeKamar;
+use App\Exports\ExportExcel;
+use Excel;
 
 
 class DashboardController extends Controller
@@ -22,16 +24,17 @@ class DashboardController extends Controller
     
     public function index()
     {
-        // $payment=Payment::all();
-        // $user = User::where('role', '=', 'member')->count();
-        // $kamar = Kamar::all()->count();
-        // $pemesanan = Pemesanan::all()->count();
-        // $paymentcount = Payment::where('transaction_status', '=', 'settlement')->count();
-        // return view('pages.dashboard.index',['data'=>$payment, 'user'=>$user, 'kamar'=>$kamar, 'pemesanan'=>$pemesanan, 'paymentcount'=>$paymentcount]);
-
-        $pemesanan=Pemesanan::all();
-        $tipekamar=TipeKamar::all();
-        return view('pages.dashboard.export',['pemesanan'=>$pemesanan, 'tipekamar'=>$tipekamar]);
+        $payment=Payment::all();
+        $user = User::where('role', '=', 'member')->count();
+        $kamar = Kamar::all()->count();
+        $pemesanan = Pemesanan::all()->count();
+        $paymentcount = Payment::where('transaction_status', '=', 'settlement')->count();
+        return view('pages.dashboard.index',['data'=>$payment, 'user'=>$user, 'kamar'=>$kamar, 'pemesanan'=>$pemesanan, 'paymentcount'=>$paymentcount]);
+        // return view('pages.dashboard.export',[
+        //     'pemesanan'=>Pemesanan::all(),
+        //      'tipekamar'=>TipeKamar::all(),
+        //       'kamar'=>Kamar::all(),
+        // ]);
     }
 
     /**
@@ -39,6 +42,11 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function export(){
+        return Excel::download(new ExportExcel, 'Laporan Transaksi.xlsx');
+    }
+
     public function create()
     {
         //
