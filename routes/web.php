@@ -39,12 +39,9 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Auth::routes(['verify' => true]);
 
 Route::group(['middleware' => ['auth','verified','checkrole:admin,resepsionis']], function() {
-    //DashboardController
-    Route::resource('dashboard', DashboardController::class);
-    Route::get('transaksi/export/',[DashboardController::class, 'export'] );
     // Route::get('dashboard/{order_id}/payment-success', [DashboardController::class, 'index']);
-    // Route::post('logoutadmin', [LoginController::class, 'logout_admin']);
-     //PemesananController
+    Route::get('dashboard/resepsionis', [DashboardController::class, 'index2']); 
+    //PemesananController
      Route::resource('pemesanan', PemesananController::class);
      Route::post('pemesanan-online',[PemesananController::class, 'store_online'] );
      Route::get('pemesanan/available-rooms/{checkin}/{checkout}',[PemesananController::class,'available_rooms']);
@@ -54,6 +51,9 @@ Route::group(['middleware' => ['auth','verified','checkrole:admin,resepsionis']]
 });
 
 Route::group(['middleware' => ['auth','verified','checkrole:admin']], function() {
+      //DashboardController
+      Route::resource('dashboard', DashboardController::class);
+      Route::get('transaksi/export/{bulan}/{tahun}',[DashboardController::class, 'export'] );
     //KamarController
     Route::get('kamar/{id}/delete',[KamarController::class,'destroy']);
     Route::resource('kamar', KamarController::class);

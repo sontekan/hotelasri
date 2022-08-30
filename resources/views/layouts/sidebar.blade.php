@@ -14,12 +14,20 @@
         <div class="main-sidemenu">
             <div class="slide-left disabled" id="slide-left"><svg xmlns="http://www.w3.org/2000/svg" fill="#7b8191" width="24" height="24" viewBox="0 0 24 24"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"/></svg></div>
             <ul class="side-menu">
-                @if ((auth()->user()->role=="admin" || auth()->user()->role=="resepsionis"))
+                @if ((auth()->user()->role=="admin"))
                 <li class="sub-category">
                     <h3>Main</h3>
                 </li>
                 <li class="slide">
                     <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{ url('dashboard')}}"><i class="side-menu__icon bi bi-house"></i><span class="side-menu__label">Dashboard</span></a>
+                </li> 
+                @endif
+                @if (auth()->user()->role=="resepsionis")
+                <li class="sub-category">
+                    <h3>Main</h3>
+                </li>
+                <li class="slide">
+                    <a class="side-menu__item has-link" data-bs-toggle="slide" href="{{ url('dashboard/resepsionis')}}"><i class="side-menu__icon bi bi-house"></i><span class="side-menu__label">Dashboard</span></a>
                 </li> 
                 <li class="sub-category">
                     <h3>Resepsionis</h3>
@@ -27,6 +35,7 @@
                 <li class="slide">
                     <a class="side-menu__item" data-bs-toggle="slide" href={{ url('pemesanan')}}><i class="side-menu__icon bi bi-calendar2-check"></i><span class="side-menu__label">Reservasi</span></a>
                 </li>
+    
                 @endif
                 @if ((auth()->user()->role=="admin"))
                 <li class="sub-category">
@@ -51,7 +60,7 @@
                 
                 @endif
 
-                @if ((auth()->user()->role=="member" || auth()->user()->role=="admin"))
+                @if ((auth()->user()->role=="member"))
                 <li class="sub-category">
                     <h3>Customer</h3>
                 </li>

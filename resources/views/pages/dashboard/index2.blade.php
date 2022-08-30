@@ -111,9 +111,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title ">Laporan Transksi &nbsp</h3>
-                                <a class="right btn btn-primary" data-bs-target="#select2modal"
-                                    data-bs-toggle="modal"><i class="fa fa-file-excel-o"></i> Excel</a>
+                                <h3 class="card-title ">Pesanan &nbsp</h3>
                             </div>
                             <div class="card-body">
                                 @if (Session::has('success'))
@@ -128,127 +126,69 @@
                                     <table class="table table-bordered text-nowrap border-bottom" id="basic-datatable">
                                         <thead>
                                             <tr>
-                                                <th class="wd-15p border-bottom-0">No</th>
-                                                <th class="wd-20p border-bottom-0">Nama Tamu</th>
-                                                <th class="wd-10p border-bottom-0">Tipe Kamar</th>
-                                                <th class="wd-10p border-bottom-0">Kamar</th>
-                                                {{-- <th class="wd-10p border-bottom-0">Kamar</th> --}}
-                                                <th class="wd-10p border-bottom-0">Tanggal Check In</th>
-                                                <th class="wd-10p border-bottom-0">Tanggal Check Out</th>
-                                                <th class="wd-10p border-bottom-0">Fasilitas Extra</th>
-                                                <th class="wd-10p border-bottom-0">Status Pembayaran</th>
-                                                <th class="wd-10p border-bottom-0">Total</th>
-                                                {{-- <th class="wd-10p border-bottom-0">Aksi</th> --}}
+                                                <th class="wd-15p border-bottom-0">Order Id</th>
+                                                {{-- <th class="wd-15p border-bottom-0">Tanggal Transaksi</th> --}}
+                                                <th class="wd-15p border-bottom-0">Pemesan</th>
+                                                <th class="wd-15p border-bottom-0">Nama Tamu</th>
+                                                <th class="wd-15p border-bottom-0">Check In</th>
+                                                <th class="wd-15p border-bottom-0">Check Out</th>
+                                                <th class="wd-15p border-bottom-0">Tipe Kamar</th>
+                                                <th class="wd-20p border-bottom-0">Kamar</th>
+                                                <th class="wd-15p border-bottom-0">Fasilitas Extra</th>
+                                                <th class="wd-20p border-bottom-0">Status Transaksi</th>
+
+                                                <th class="wd-10p border-bottom-0">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($pemesanan2 as $ps)
-                                            <tr>
-                                                <td>{{$loop->iteration}}</td>
-                                                <td>{{$ps->tamu}}</td>
-                                                <td>{{$ps->kamar->tipekamar->nama}}</td>
-                                                <td>{{$ps->kamar->no_kamar}}</td>
-                                                <td>{{date('d/m/Y',strtotime ($ps->checkin))}}</td>
-                                                <td>{{date('d/m/Y',strtotime ($ps->checkout))}}</td>
-                                                @if ($ps->extra_service == null)
-                                                <td>Tidak Ada</td>
-                                                @else
-                                                <td>{{$ps->extra_service}}</td>
-                                                @endif
-                                                <td>{{$ps->status_pembayaran}}</td>
-                                                @if ($ps->extra_service == null)
-                                                <td>Rp.{{number_format($ps->kamar->tipekamar->harga, 0, ',','.')}}</td>
-                                                @else
-                                                <td>Rp.{{number_format(50000+$ps->kamar->tipekamar->harga, 0, ',','.')}}</td>
-                                                @endif
-                                                {{-- <td>
-                        
-                                                    <a class="btn btn-primary" href="{{url ('pemesanan/'. $ps->id. '/edit')}}"> <span class="fe fe-edit"> Edit</span></a>
-                                                    <a class="btn btn-danger" href="{{url ('pemesanan/'. $ps->id.'/print')}}"> <span class="fe fe-printer"> Print</span></a>
-                                                </td> --}}
-                                                
-                                            </tr>
+
+                                            @foreach ($data as $py)
+                                                <tr>
+                                                    <td>{{ $py->order_id }}</td>
+                                                    {{-- <td>{{ date('d/m/Y', strtotime($py->transaction_time))}}</td> --}}
+                                                    <td>{{ $py->user->name }}</td>
+                                                    <td>{{ $py->tamu }}</td>
+                                                    <td>{{ date('d/m/Y', strtotime($py->checkin)) }}</td>
+                                                    <td>{{ date('d/m/Y', strtotime($py->checkout)) }}</td>
+                                                    <td>{{ $py->nama }}</td>
+
+                                                    @if ($py->kamar_id == null)
+                                                        <td>Kamar Belum Diproses</td>
+                                                    @else
+                                                        <td>{{ $py->kamar->no_kamar }}</td>
+                                                    @endif
+
+                                                    @if ($py->fasilitas == 0)
+                                                        <td>Tidak Ada</td>
+                                                    @else
+                                                        <td>Extra Bed</td>
+                                                    @endif
+                                                    <td><span
+                                                            class="tag tag-indigo text-center">{{ $py->transaction_status }}</span>
+                                                    </td>
+
+                                                    <td>
+                                                        @if ($py->kamar_id == null)
+                                                            <a class="btn btn-primary"
+                                                                href="{{ url('booking/' . Crypt::encryptString($py->id)) . '/tambah-tamu' }}">
+                                                                <span class="zmdi zmdi-hourglass-outline"> Proses</span></a>
+                                                        @else
+                                                            <button class="btn btn-primary"><span class="mdi mdi-approval">
+                                                                    Sudah
+                                                                    Diproses</span></button>
+                                                        @endif
+
+                                                    </td>
+                                                </tr>
                                             @endforeach
                                         </tbody>
-                                    </table>        
+                                    </table>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- LIST PESANAN END -->
-                <!-- Select2 modal -->
-                <div class="modal fade" id="select2modal">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content modal-content-demo">
-                            <div class="modal-header">
-                                <h6 class="modal-title">Cetak Laporan Transaksi</h6>
-                                <button class="btn-close" data-bs-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">×</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <h6>Pilih Bulan</h6>
-                                <!-- Select2 -->
-                                <select id="bulan" class="form-control select2 select2-dropdown" required >
-                                    <option value="" selected disabled hidden>Pilih Tahun</option>
-                                    <option value="1">
-                                        Januari
-                                    </option>
-                                    <option value="2">
-                                        Februari
-                                    </option>
-                                    <option value="3">
-                                        Maret
-                                    </option>
-                                    <option value="4">
-                                        April
-                                    </option>
-                                    <option value="5">
-                                        Mei
-                                    </option>
-                                    <option value="6">
-                                        Juni
-                                    </option>
-                                    <option value="7">
-                                        Juli
-                                    </option>
-                                    <option value="8">
-                                        Agustus
-                                    </option>
-                                    <option value="9">
-                                        September
-                                    </option>
-                                    <option value="10">
-                                        Oktober
-                                    </option>
-                                    <option value="11">
-                                        November
-                                    </option>
-                                    <option value="12">
-                                        Desember
-                                    </option>
-                                </select>
-
-                                <h6 class="mt-3">Pilih Tahun</h6>
-                                <!-- Select2 -->
-                                <select id="tahun" class="form-control select2 select2-dropdown" required>
-                                    <option value="" selected disabled hidden>Pilih Tahun</option>
-                                    <option value="2022">
-                                        2022
-                                    </option>
-                                </select>
-                                <!-- Select2 -->
-                            </div>
-                            <div class="modal-footer">
-                                <a class="btn ripple btn-primary" onclick="this.href='transaksi/export/'+ document.getElementById('bulan').value + '/' + document.getElementById('tahun').value" target="_blank"><i class="si si-printer"></i> Cetak</a>
-                                <button class="btn ripple btn-danger" data-bs-dismiss="modal"
-                                    type="button">Tutup</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Select2 modal -->
 
             </div>
             <!-- CONTAINER CLOSED -->
@@ -271,8 +211,5 @@
     <script src="{{ asset('assets') }}/plugins/datatable/dataTables.responsive.min.js"></script>
     <script src="{{ asset('assets') }}/plugins/datatable/responsive.bootstrap5.min.js"></script>
     <script src="{{ asset('assets') }}/js/table-data.js"></script>
-    <!-- Select2 js-->
-    <script src="{{ asset('assets') }}/plugins/select2/select2.full.min.js"></script>
-    <script src="{{ asset('assets') }}/js/select2.js"></script>
 @endsection
 @endsection

@@ -25,11 +25,13 @@ class DashboardController extends Controller
     public function index()
     {
         $payment=Payment::all();
+        $pemesanan=Pemesanan::all();
+        $tipekamar=TipeKamar::all();
         $user = User::where('role', '=', 'member')->count();
         $kamar = Kamar::all()->count();
-        $pemesanan = Pemesanan::all()->count();
+        $pemesanan2 = Pemesanan::all()->count();
         $paymentcount = Payment::where('transaction_status', '=', 'settlement')->count();
-        return view('pages.dashboard.index',['data'=>$payment, 'user'=>$user, 'kamar'=>$kamar, 'pemesanan'=>$pemesanan, 'paymentcount'=>$paymentcount]);
+        return view('pages.dashboard.index',['data'=>$payment, 'user'=>$user, 'kamar'=>$kamar, 'pemesanan'=>$pemesanan2, 'paymentcount'=>$paymentcount, 'pemesanan2'=>$pemesanan, 'kamar'=>$kamar]);
         // return view('pages.dashboard.export',[
         //     'pemesanan'=>Pemesanan::all(),
         //      'tipekamar'=>TipeKamar::all(),
@@ -43,8 +45,26 @@ class DashboardController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function export(){
-        return Excel::download(new ExportExcel, 'Laporan Transaksi.xlsx');
+    public function index2()
+    {
+        $payment=Payment::all();
+        $user = User::where('role', '=', 'member')->count();
+        $kamar = Kamar::all()->count();
+        $pemesanan = Pemesanan::all()->count();
+        $paymentcount = Payment::where('transaction_status', '=', 'settlement')->count();
+        return view('pages.dashboard.index2',['data'=>$payment, 'user'=>$user, 'kamar'=>$kamar, 'pemesanan'=>$pemesanan, 'paymentcount'=>$paymentcount]);
+        // return view('pages.dashboard.export',[
+        //     'pemesanan'=>Pemesanan::all(),
+        //      'tipekamar'=>TipeKamar::all(),
+        //       'kamar'=>Kamar::all(),
+        // ]);
+    }
+
+    public function export($bulan, $tahun){
+
+        // dd([$bulan, $tahun]);
+        // return Excel::download(new ExportExcel)->Seleksi($bulan, $tahun)->download('invoices.xlsx');
+        return Excel::download(new ExportExcel($bulan, $tahun), 'Laporan Transaksi Bulan'.' '.$bulan. '.xlsx');
     }
 
     public function create()

@@ -68,10 +68,6 @@
                                 </a>
                             </div>
                             <!-- FULL-SCREEN -->
-                            
-                           
-                           
-                            @auth
                             <div class="dropdown d-flex profile-1">
                                 <a href="javascript:void(0)" data-bs-toggle="dropdown" class="nav-link leading-none d-flex">
                                     <img src="{{asset('assets')}}/images/users/21.jpg" alt="profile-user"
@@ -98,7 +94,6 @@
         
                                 </div>
                             </div>
-                            @endauth
                         </div>
                     </div>
                 </div>
