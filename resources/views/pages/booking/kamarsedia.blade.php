@@ -70,8 +70,7 @@
                                                 </div>
                                                 <div class="col-xl-3 col-lg-12 col-md-12 my-auto">
                                                     <div class="card-body p-0">
-                                                        <div class="price h3 text-center mb-5 fw-bold">Rp
-                                                            {{ $row['tipekamar']['harga'] }} <p class="h6 text-danger text-center">per
+                                                        <div class="price h3 text-center mb-5 fw-bold">Rp.                                                            {{number_format($row['tipekamar']['harga'], 0, ',','.')}} <p class="h6 text-danger text-center">per
                                                                 kamar per malam</p>
                                                         </div>
                                                         <form action="{{ url('booking/' .Crypt::encryptString($row['tipekamar']['id'])). '/pesan' }}"

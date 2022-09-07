@@ -191,7 +191,7 @@
                                 <h6>Pilih Bulan</h6>
                                 <!-- Select2 -->
                                 <select id="bulan" class="form-control select2 select2-dropdown" required >
-                                    <option value="" selected disabled hidden>Pilih Tahun</option>
+                                    <option value="" selected disabled hidden>Pilih Bulan</option>
                                     <option value="1">
                                         Januari
                                     </option>
