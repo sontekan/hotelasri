@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="{{asset ('frontend')}}/css/animate.css">
     <link rel="stylesheet" href="{{asset ('frontend')}}/css/slicknav.css">
     <link rel="stylesheet" href="{{asset ('frontend')}}/css/style.css">
-    <link rel="stylesheet" href="{{asset ('frontend')}}/css/responsive.css">
+    <link rel="stylesheet" href="{{asset ('frontends')}}/css/responsive.cs">
 
 </head>
 
@@ -54,7 +54,7 @@
                         <div class="col-xl-2 col-lg-2">
                             <div class="logo-img">
                                 <a href="index.html">
-                                    <img src="{{asset ('frontend')}}/img/logo-final.png" alt="">
+                                    <img src="{{asset ('frontend/img/logo-final.png')}}" alt="">
                                 </a>
                             </div>
                         </div>
