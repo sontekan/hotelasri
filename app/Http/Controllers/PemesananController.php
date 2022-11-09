@@ -198,7 +198,7 @@ class PemesananController extends Controller
         // dd($data[0]);
         }
     
-    public function payment (Request $request){
+    public static function payment (Request $request){
 
             $pemesan = $request->pemesan;
             $tamu = $request->tamu;
@@ -291,7 +291,7 @@ class PemesananController extends Controller
 
            
           if ($payment->transaction_status == 'settlement') {
-            Pemesanan::sendEmailSuccess($payment);
+            // Pemesanan::sendEmailSuccess($payment);
             return redirect('booking/'. Crypt::encryptString($payment->id) .'/payment-success'); 
           } else {
             Pemesanan::sendEmailPending($payment);
